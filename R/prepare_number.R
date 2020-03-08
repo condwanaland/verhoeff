@@ -23,7 +23,8 @@ prepare_number <- function(number){
   number <- suppressWarnings(as.numeric(number))
 
   if (is.na(number)){
-    stop("NAs were introduced. Please check your input can be coerced to numeric")
+    stop("NAs were introduced. Please check your input can be coerced to numeric",
+         call. = FALSE)
   }
 
   rev_number <- reverse_number(number)

@@ -1,7 +1,7 @@
 Package: verhoeff
 Type: Package
 Title: Implementation of the Verhoeff Check Digit Algorithim
-Version: 0.2.9000
+Version: 0.3.0
 Author: Conor Neilson
 Maintainer: <conor.neilson@gmail.com>
 Description: More about what it does (maybe more than one line)
