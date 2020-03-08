@@ -1,24 +1,55 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # verhoeff
 
-This package is just my take on implementing the Verhoeff algorithim for calculating check digits. This is not novel in R (i.e., see https://github.com/fascinatingfingers/CheckDigit), but was more a fun little project.
-
+This package is my take on implementing the Verhoeff algorithim for calculating check digits. 
 My influence for the algorithims implementation was primarily from the wikipedia outline (https://en.wikipedia.org/wiki/Verhoeff_algorithm), and the paper by A. Dunn (Computer program for the calculation and validation of Verhoeff check digits, https://www.ccamlr.org/en/wg-fsa-sam-05/11)
 
-Verhoeff is still undergoing most of its development. At this stage the package is not functional
+Verhoeff is still undergoing most of its development. A CRAN release will be prepared after I've burned through most of the GH issues
 
 ## Installation
 
-You can install verhoeff from github with:
+`verhoeff` is not (yet) on CRAN. You can install verhoeff from github with:
 
-```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
+```{r gh-installation, eval = TRUE, echo=TRUE, message=FALSE}
 devtools::install_github("condwanaland/verhoeff")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+To calculate the Verhoeff Check Digit for a given number, use `verhoeff_calculate`
 
 ```{r example}
-## basic example code
+library(verhoeff)
+verhoeff::verhoeff_calculate(123)
 ```
+
+To calculate for many numbers, just pass a vector.
+
+```{r}
+verhoeff_calculate(c(1234, 5678, 9, 10))
+```
+
+If you would prefer the output to be in a list, with one check digit per element, use the `as_list` parameter.
+
+```{r}
+verhoeff_calculate(c(1234, 5678, 9, 10), as_list = TRUE)
+```
+
+
+## Other implementations
+
+See https://github.com/fascinatingfingers/CheckDigit for another implementation of check digits that considers more than just the Verhoeff algorithim.
