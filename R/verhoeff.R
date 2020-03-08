@@ -3,7 +3,7 @@
 #' @param number The vector of numbers you want a check digit for
 #' @param as_list Return the results as a list? Defaults to false
 #'
-#' @return
+#' @return Vector or list of check digits
 #' @export
 #'
 #' @examples

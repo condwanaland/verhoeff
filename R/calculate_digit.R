@@ -11,6 +11,8 @@
 #' @export
 #'
 #' @examples
+#' dat <- verhoeff:::create_verhoeff_matrices()
+#' calculate_digit(5, dat$d5, dat$d5_p, dat$inv_v)
 calculate_digit <- function(number, d5, d5_p, inv_v){
 
   number <- prepare_number(number)

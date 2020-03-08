@@ -1,12 +1,13 @@
 Package: verhoeff
 Type: Package
 Title: Implementation of the Verhoeff Check Digit Algorithim
-Version: 0.3.1.9000
+Version: 0.3.2.9000
 Author: Conor Neilson
 Maintainer: <conor.neilson@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: GPL -3
+License: GPL-3
+Depends: R (>= 2.10)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2

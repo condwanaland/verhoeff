@@ -12,7 +12,7 @@ verhoeff_calculate(number, as_list = FALSE)
 \item{as_list}{Return the results as a list? Defaults to false}
 }
 \value{
-
+Vector or list of check digits
 }
 \description{
 verhoeff_calculate

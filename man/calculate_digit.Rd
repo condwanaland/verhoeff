@@ -21,3 +21,7 @@ A single integer
 \description{
 Calculates a single Verhoeff Check Digit
 }
+\examples{
+dat <- verhoeff:::create_verhoeff_matrices()
+calculate_digit(5, dat$d5, dat$d5_p, dat$inv_v)
+}
