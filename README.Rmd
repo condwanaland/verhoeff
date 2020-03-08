@@ -1,0 +1,24 @@
+# verhoeff
+
+This package is just my take on implementing the Verhoeff algorithim for calculating check digits. This is not novel in R (i.e., see https://github.com/fascinatingfingers/CheckDigit), but was more a fun little project.
+
+My influence for the algorithims implementation was primarily from the wikipedia outline (https://en.wikipedia.org/wiki/Verhoeff_algorithm), and the paper by A. Dunn (Computer program for the calculation and validation of Verhoeff check digits, https://www.ccamlr.org/en/wg-fsa-sam-05/11)
+
+Verhoeff is still undergoing most of its development. At this stage the package is not functional
+
+## Installation
+
+You can install verhoeff from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("condwanaland/verhoeff")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+## basic example code
+```
