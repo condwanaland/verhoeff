@@ -51,6 +51,51 @@ verhoeff_calculate(c(1234, 5678, 9, 10), as_list = TRUE)
 #> [1] 9
 ```
 
+The output of `verhoeff_calculate` is designed so it can be a new column in a dataframe (i.e., as the output of a `dplyr::mutate` call)
+
+``` r
+suppressPackageStartupMessages(library(dplyr))
+
+# Make a random dataframe that has integer columns
+mtcars$name <- rownames(mtcars)
+mtcars %>% 
+  select(name, gear) %>% 
+  mutate(check_digit = verhoeff_calculate(gear))
+#>                   name gear check_digit
+#> 1            Mazda RX4    4           3
+#> 2        Mazda RX4 Wag    4           3
+#> 3           Datsun 710    4           3
+#> 4       Hornet 4 Drive    3           6
+#> 5    Hornet Sportabout    3           6
+#> 6              Valiant    3           6
+#> 7           Duster 360    3           6
+#> 8            Merc 240D    4           3
+#> 9             Merc 230    4           3
+#> 10            Merc 280    4           3
+#> 11           Merc 280C    4           3
+#> 12          Merc 450SE    3           6
+#> 13          Merc 450SL    3           6
+#> 14         Merc 450SLC    3           6
+#> 15  Cadillac Fleetwood    3           6
+#> 16 Lincoln Continental    3           6
+#> 17   Chrysler Imperial    3           6
+#> 18            Fiat 128    4           3
+#> 19         Honda Civic    4           3
+#> 20      Toyota Corolla    4           3
+#> 21       Toyota Corona    3           6
+#> 22    Dodge Challenger    3           6
+#> 23         AMC Javelin    3           6
+#> 24          Camaro Z28    3           6
+#> 25    Pontiac Firebird    3           6
+#> 26           Fiat X1-9    4           3
+#> 27       Porsche 914-2    5           8
+#> 28        Lotus Europa    5           8
+#> 29      Ford Pantera L    5           8
+#> 30        Ferrari Dino    5           8
+#> 31       Maserati Bora    5           8
+#> 32          Volvo 142E    4           3
+```
+
 Other implementations
 ---------------------
 

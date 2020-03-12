@@ -1,6 +1,7 @@
 #' calculate_digit
 #'
-#' Calculates a single Verhoeff Check Digit
+#' Calculates a single Verhoeff Check Digit. This function is exported, but it would usually
+#' be called from one of the `verhoeff_*` wrapper functions
 #'
 #' @param number A number you want to calculate the check digit for
 #' @param d5 The verhoeff d5 matrix. Retrievable with create_verhoeff_matrices()$d5
