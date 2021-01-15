@@ -27,6 +27,11 @@ verhoeff_calculate <- function(number, as_list = FALSE){
 }
 
 
-# verhoeff_validate <-
+verhoeff_append <- function(number, sep = "-"){
+  original_number <- number
+  check_digit <- verhoeff_calculate(number)
 
-#verhoeff_calculate(c(1234, 4321, 7635, 783435), as_list = F)
+  appended_number <- paste(original_number, check_digit, sep = sep)
+
+  return(appended_number)
+}
