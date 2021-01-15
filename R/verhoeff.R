@@ -27,6 +27,19 @@ verhoeff_calculate <- function(number, as_list = FALSE){
 }
 
 
+#' verhoeff_append
+#'
+#' Return a number with its check digit appended
+#'
+#' @param number The number to calculate a check digit for
+#' @param sep A separator for the two numbers
+#'
+#' @return Numeric vector of length equal to its input
+#' @export
+#'
+#' @examples
+#' verhoeff::verhoeff_append(123)
+
 verhoeff_append <- function(number, sep = "-"){
   original_number <- number
   check_digit <- verhoeff_calculate(number)

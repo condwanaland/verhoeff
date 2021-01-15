@@ -19,7 +19,8 @@ calculate_digit(number, d5, d5_p, inv_v)
 A single integer
 }
 \description{
-Calculates a single Verhoeff Check Digit
+Calculates a single Verhoeff Check Digit. This function is exported, but it would usually
+be called from one of the `verhoeff_*` wrapper functions
 }
 \examples{
 dat <- verhoeff:::create_verhoeff_matrices()

@@ -27,6 +27,8 @@ test_that("dataframes are mutated correctly", {
   expect_equal(test_df$manually_appended, test_df$appended)
 })
 
+rm(test_df)
+
 
 test_that("errors are thrown on bad input", {
   expect_error(verhoeff_append("the", "NAs were introduced"))
