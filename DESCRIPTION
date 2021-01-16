@@ -1,11 +1,14 @@
 Package: verhoeff
 Type: Package
-Title: Implementation of the Verhoeff Check Digit Algorithim
-Version: 0.3.3.9000
+Title: Implementation of the Verhoeff Check Digit Algorithm
+Version: 0.4.0
 Author: Conor Neilson
-Maintainer: <conor.neilson@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Conor Neilson <condwanaland@gmail.com>
+Description: The verhoeff package provides functions that utilise the verhoeff 
+    algorithm for calculating digits. Functions are provided to calculate a 
+    check digit given an input number, calculate and append a check digit to an
+    input number, and validate that a check digit is correct given an input 
+    number.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
