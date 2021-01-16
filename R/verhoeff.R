@@ -39,7 +39,6 @@ verhoeff_calculate <- function(number, as_list = FALSE){
 #'
 #' @examples
 #' verhoeff::verhoeff_append(123)
-
 verhoeff_append <- function(number, sep = "-"){
   original_number <- number
   check_digit <- verhoeff_calculate(number)
@@ -47,4 +46,30 @@ verhoeff_append <- function(number, sep = "-"){
   appended_number <- paste(original_number, check_digit, sep = sep)
 
   return(appended_number)
+}
+
+
+
+#' verhoeff_validate
+#'
+#' Enter a number, and an existing check digit. Function will return true if the supplied check digit is a correct verhoeff check digit for the given number
+#'
+#' @param number A numerical input
+#' @param check_digit An existing check digit for the input number
+#'
+#' @return Logical vector
+#' @export
+#'
+#' @examples
+#' verhoeff::verhoeff_validate(123, 3)
+verhoeff_validate <- function(number, check_digit){
+
+  number <- number
+  check_digit <- as.integer(check_digit)
+
+  calc_check_digit <- verhoeff_calculate(number)
+
+  return(
+   identical(check_digit, calc_check_digit)
+  )
 }
