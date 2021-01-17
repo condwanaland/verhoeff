@@ -1,25 +1,33 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-verhoeff
-========
 
-This package is my take on implementing the Verhoeff algorithim for calculating check digits. My influence for the algorithims implementation was primarily from the wikipedia outline (<https://en.wikipedia.org/wiki/Verhoeff_algorithm>), and the paper by A. Dunn (Computer program for the calculation and validation of Verhoeff check digits, <https://www.ccamlr.org/en/wg-fsa-sam-05/11>)
+# verhoeff
 
-Verhoeff is still undergoing most of its development. A CRAN release will be prepared after I've burned through most of the GH issues
+This package is my take on implementing the Verhoeff algorithim for
+calculating check digits. My influence for the algorithims
+implementation was primarily from the wikipedia outline
+(<https://en.wikipedia.org/wiki/Verhoeff_algorithm>), and the paper by
+A. Dunn (Computer program for the calculation and validation of Verhoeff
+check digits, <https://www.ccamlr.org/en/wg-fsa-sam-05/11>)
 
-Installation
-------------
+## Installation
 
-`verhoeff` is not (yet) on CRAN. You can install verhoeff from github with:
+You can install `verhoeff` from CRAN with:
+
+``` r
+install.packages("verhoeff")
+```
+
+Or grab the development version from github with:
 
 ``` r
 devtools::install_github("condwanaland/verhoeff")
 ```
 
-Example
--------
+## Example
 
-To calculate the Verhoeff Check Digit for a given number, use `verhoeff_calculate`
+To calculate the Verhoeff Check Digit for a given number, use
+`verhoeff_calculate`
 
 ``` r
 library(verhoeff)
@@ -34,7 +42,8 @@ verhoeff_calculate(c(1234, 5678, 9, 10))
 #> [1] 0 8 1 9
 ```
 
-If you would prefer the output to be in a list, with one check digit per element, use the `as_list` parameter.
+If you would prefer the output to be in a list, with one check digit per
+element, use the `as_list` parameter.
 
 ``` r
 verhoeff_calculate(c(1234, 5678, 9, 10), as_list = TRUE)
@@ -51,7 +60,8 @@ verhoeff_calculate(c(1234, 5678, 9, 10), as_list = TRUE)
 #> [1] 9
 ```
 
-The output of `verhoeff_calculate` is designed so it can be a new column in a dataframe (i.e., as the output of a `dplyr::mutate` call)
+The output of `verhoeff_calculate` is designed so it can be a new column
+in a dataframe (i.e., as the output of a `dplyr::mutate` call)
 
 ``` r
 suppressPackageStartupMessages(library(dplyr))
@@ -96,7 +106,30 @@ mtcars %>%
 #> 32          Volvo 142E    4           3
 ```
 
-Other implementations
----------------------
+In addition to `verhoeff_calculate`, `verhoeff` offers `verhoeff_append`
+and `verhoeff_validate`.
 
-See <https://github.com/fascinatingfingers/CheckDigit> for another implementation of check digits that considers more than just the Verhoeff algorithim.
+Use `verhoeff_append` to append a check digit to a provided number:
+
+``` r
+verhoeff_append(123)
+#> [1] "123-3"
+verhoeff_append(c(123, 5, 0))
+#> [1] "123-3" "5-8"   "0-4"
+```
+
+Use `verhoeff_validate` to check whether a check digit is correct for
+the provided number
+
+``` r
+verhoeff_validate(number = 123, check_digit = 3)
+#> [1] TRUE
+verhoeff_validate(number = 123, check_digit = 4)
+#> [1] FALSE
+```
+
+## Other implementations
+
+See <https://github.com/fascinatingfingers/CheckDigit> for another
+implementation of check digits that considers more than just the
+Verhoeff algorithim.
