@@ -1,7 +1,13 @@
 #' create_verhoeff_matrices
 #'
-#' @return An object with 3 fields: d5, f, and inv_v
-#' @noRd
+#' @return An object with three fields; d5, d5_p, and inv_v
+#' @export
+#' @keywords internal
+#'
+#' @examples
+#' verhoeff::create_verhoeff_matrices()$d5
+#' verhoeff::create_verhoeff_matrices()$d5_p
+#' verhoeff::create_verhoeff_matrices()$inv_v
 create_verhoeff_matrices <- function(){
   d5_matrix <- matrix(as.integer(c(
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,

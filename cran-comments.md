@@ -1,3 +1,9 @@
+## Resubmission #2
+
+This is a 2nd resubmission. In this version I have
+
+* Updated examples to not use unexported functions
+
 ## Resubmission
 
 This is a resubmission. In this version I have

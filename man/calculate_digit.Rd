@@ -23,6 +23,6 @@ Calculates a single Verhoeff Check Digit. This function is exported, but it woul
 be called from one of the `verhoeff_*` wrapper functions
 }
 \examples{
-dat <- verhoeff:::create_verhoeff_matrices()
+dat <- verhoeff::create_verhoeff_matrices()
 calculate_digit(5, dat$d5, dat$d5_p, dat$inv_v)
 }
