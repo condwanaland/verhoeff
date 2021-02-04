@@ -114,8 +114,8 @@ Use `verhoeff_append` to append a check digit to a provided number:
 ``` r
 verhoeff_append(123)
 #> [1] "123-3"
-verhoeff_append(c(123, 5, 0))
-#> [1] "123-3" "5-8"   "0-4"
+verhoeff_append(c(123, 5, 0), sep = "_")
+#> [1] "123_3" "5_8"   "0_4"
 ```
 
 Use `verhoeff_validate` to check whether a check digit is correct for

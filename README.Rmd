@@ -74,7 +74,7 @@ Use `verhoeff_append` to append a check digit to a provided number:
 
 ```{r}
 verhoeff_append(123)
-verhoeff_append(c(123, 5, 0))
+verhoeff_append(c(123, 5, 0), sep = "_")
 ```
 
 Use `verhoeff_validate` to check whether a check digit is correct for the provided number
